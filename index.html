@@ -12,19 +12,26 @@
             margin: 0;
             padding: 0;
         }
+        .top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .top-bar img {
+            height: 40px;
+        }
         .container {
-            max-width: 500px;
+            max-width: 80%;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 50px auto;
-        }
-        .logo {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 220px; /* Increased size */
         }
         h1 {
             color: #333;
@@ -37,18 +44,64 @@
             text-decoration: none;
             border-radius: 5px;
             font-size: 16px;
+            margin-bottom: 20px;
         }
         .btn:hover {
             background-color: #0056b3;
         }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            margin-top: 20px;
+            justify-items: center;
+        }
+        .image-gallery img:nth-child(odd) {
+            width: 110%;
+            max-width: 530px;
+        }
+        .image-gallery img:nth-child(even) {
+            width: 90%;
+            max-width: 270px;
+        }
+        .image-gallery img {
+            height: auto;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
-    <img src="dsac.png" alt="Logo" class="logo"> <!-- Replace 'logo.png' with your actual logo path -->
+    <div class="top-bar">
+        <!-- <span>contact: bipasha.garg@research.iiit.ac.in</span> -->
+        <span>R^d Visualization</span>
+        <img src="dsac.png" alt="Logo">
+    </div>
     <div class="container">
-        <h1>Hello!</h1>
-        <p>Follow the link below to fill out the query form:</p>
+        <p>Follow the link below to fill out the survey form:</p>
         <a href="https://forms.gle/KZG6AL1c6YUmMYHi9" class="btn" target="_blank">Fill the Form</a>
+   <h1 style="text-align: left;">How to read the visualization</h1>
+<p style="text-align: left;">
+    1. The concentric rings represent different subspaces chosen on the basis of increasing variance of coordinates (outermost ring subspace having the highest variance).<br>
+    2. The sectors in each ring represent the quadrants in that dimension of subspace. <br>
+    3. The color of the quadrant represents a positive or negative bit (Blue for positive; Pink for negative). <br>
+    4. The color of the point connections shows the label (mentioned in the legend).<br>
+    5. The connected point is basically the same point coordinates in different subspaces. <br>
+    6. The point of that subspace is placed in its respective sector in the respective subspace ring according to the bit vector.<br>
+    7. However, the point placement position in its sector is fixed to be in the center.<br>
+</p>
+
+        <div class="image-gallery">
+            <img src="1_0.png" alt="Image 1">
+            <img src="1_1.png" alt="Image 2">
+            <img src="2_0.png" alt="Image 3">
+            <img src="2_1.png" alt="Image 4">
+            <img src="3_0.png" alt="Image 5">
+            <img src="3_1.png" alt="Image 6">
+            <img src="4_0.png" alt="Image 7">
+            <img src="4_1.png" alt="Image 8">
+        </div>
     </div>
 </body>
 </html>
